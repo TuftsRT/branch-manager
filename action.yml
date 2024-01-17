@@ -52,7 +52,7 @@ runs:
       shell: bash
       env:
         REPO: repo
-        BRANCH: ${{ inputs.source-branch }}
+        BRANCH: ${{ inputs.destination-branch }}
         CLEAR: ${{ inputs.clear-destination }}
         STAGING: staging
         MESSAGE: ${{ github.sha }}
