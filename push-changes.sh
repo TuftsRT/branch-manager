@@ -5,4 +5,4 @@ if [ $CLEAR = true ]; then git rm -rfq *; fi
 rsync -a --exclude=".git" ../$STAGING/ ./
 git add -A
 git commit -m "$MESSAGE"
-git push -u origin HEAD
+git push -u origin $BRANCH
