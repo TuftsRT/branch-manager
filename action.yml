@@ -1,22 +1,27 @@
-name: "Branch Manager"
-description: "Automatically copy content between repository branches"
-author: "Tufts University"
+name: Branch Manager
+author: Tufts University
+description: automatically copy content between repository branches
 
 inputs:
   source-branch:
+    description: ''
     required: false
     default: ${{ github.ref_name }}
   destination-branch:
+    description: ''
     required: true
   clear-destination:
+    description: ''
     required: false
-    default: "false"
+    default: 'false'
   copy:
+    description: ''
     required: false
-    default: ""
+    default: ''
   replace:
+    description: ''
     required: false
-    default: ""
+    default: ''
 
 runs:
   using: composite
