@@ -4,22 +4,17 @@ author: "Tufts University"
 
 inputs:
   source-branch:
-    type: string
     required: false
     default: ${{ github.ref_name }}
   destination-branch:
-    type: string
     required: true
   clear-destination:
-    type: boolean
     required: false
-    default: false
+    default: "false"
   copy:
-    type: string
     required: false
     default: ""
   replace:
-    type: string
     required: false
     default: ""
 
