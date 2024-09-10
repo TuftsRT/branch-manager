@@ -4,24 +4,24 @@ description: automatically copy content between repository branches
 
 inputs:
   source-branch:
-    description: ''
+    description: ""
     required: false
     default: ${{ github.ref_name }}
   destination-branch:
-    description: ''
+    description: ""
     required: true
   clear-destination:
-    description: ''
+    description: ""
     required: false
-    default: 'false'
+    default: "false"
   copy:
-    description: ''
+    description: ""
     required: false
-    default: ''
+    default: ""
   replace:
-    description: ''
+    description: ""
     required: false
-    default: ''
+    default: ""
 
 runs:
   using: composite
