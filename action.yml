@@ -4,26 +4,40 @@ description: automatically copy content between repository branches
 
 inputs:
   source-branch:
-    description: ""
+    description: |
+      Branch to copy content from. Defaults to the triggering branch.
     required: false
     default: ${{ github.ref_name }}
   destination-branch:
-    description: ""
+    description: |
+      Branch to copy content to.
     required: true
   clear-destination:
-    description: ""
+    description: |
+      Whether to delete all files from the destination branch before copying.
+      Must be set to "true" for deletion to occur. Other values ignored.
     required: false
     default: "false"
   copy:
-    description: ""
+    description: |
+      Newline-delimited list of `source|destination` arguments passed to `rsync`
+      and executed using archive mode. Source and destination paths are relative
+      to the repository root and will default to the repository root if not
+      provided or left empty. Commands executed in order provided.
     required: false
     default: ""
   replace:
-    description: ""
+    description: |
+      Newline-delimited list of `find|replace|glob` arguments used to perform
+      string replacement in the copied files. Commands are executed using `sed`
+      in order provided and applied only to files matching the glob pattern.
+      Omitting the glob pattern will apply the replacement to all files.
     required: false
     default: ""
   commit-message:
-    description: ""
+    description: |
+      Message to use when committing changes to the destination branch.
+      Defaults to the SHA of the triggering commit.
     required: false
     default: ${{ github.sha }}
 
