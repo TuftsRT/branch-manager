@@ -1,4 +1,5 @@
 #!/bin/bash
+home=$(pwd)
 cd $REPO
 git reset --hard
 git config user.name "$(git show -s --format='%an' HEAD)"
@@ -9,3 +10,4 @@ rsync -a --exclude=".git" ../$STAGING/ ./
 git add -A
 git commit -m "$MESSAGE"
 git push -u origin $BRANCH
+cd $home
